@@ -1,0 +1,14 @@
+﻿@page "/"
+@using BlazorHybrid.Core
+@using BlazorHybrid.Core.Services
+@using Radzen.Blazor
+@inject IDataService dataService
+
+<h1>Hello, WURld!</h1>
+
+<RadzenDataGrid TItem="BlazorData" Data="@blazorData">
+    <Columns>
+        <RadzenDataGridColumn TItem="BlazorData" Property="Name" Title="Naam" Width="150px"/>
+        <RadzenDataGridColumn TItem="BlazorData" Property="Age" Title="Leeftijd" Width="50px"/>
+    </Columns>
+</RadzenDataGrid>

@@ -1,0 +1,9 @@
+﻿@page "/counter"
+@using BlazorHybrid.Core.Extensions
+@using Radzen.Blazor
+
+<h1>Counter</h1>
+<p>@(servicetest.ToBlazorUpper())</p>
+<p role="status">Current count: @currentCount</p>
+
+<RadzenButton class="btn btn-primary" Click="IncrementCount">Click me</RadzenButton>

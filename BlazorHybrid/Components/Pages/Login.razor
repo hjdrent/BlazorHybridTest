@@ -1,0 +1,15 @@
+﻿@page "/login"
+@using Microsoft.Identity.Client
+@* @inject IPublicClientApplication PublicClientApp *@
+
+<h3>Login with Azure Entra ID</h3>
+
+@if (!isAuthenticated)
+{
+    <button @onclick="SignIn">Sign In</button>
+}
+else
+{
+    <p>Welcome, @userName!</p>
+    <button @onclick="SignOut">Sign Out</button>
+}

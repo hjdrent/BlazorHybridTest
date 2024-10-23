@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/appicon"
+		android:label="BlazorHybrid"
+		android:roundIcon="@mipmap/appicon_round"
+		android:supportsRtl="true"
+		android:theme="@style/Maui.SplashTheme">
+		<!--<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />-->
+		<meta-data android:name="com.microsoft.identity.client.ClientId" android:value="00000000-0000-0000-0000-000000000000" />
+		<meta-data android:name="com.microsoft.identity.client.RedirectUri" android:value="msal00000000-0000-0000-0000-000000000000://auth" />
+		
+		<!-- Add this activity for MSAL redirect handling -->
+		<activity android:name="microsoft.identity.client.BrowserTabActivity" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="msal00000000-0000-0000-0000-000000000000" android:host="auth" />
+			</intent-filter>
+		</activity>
+	</application>
+
+	<!-- Required permissions -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>
+
